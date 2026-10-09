@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **`testing-coach` gained two verbosity checks over the accessibility tree.** A labelled field that also carries a placeholder announces its name twice, and a flex or grid row that reads as one phrase takes one swipe per child on WebKit. Both are confirmed in Chrome DevTools > Accessibility (duplicated name) or Safari / iOS VoiceOver (split run) rather than by ear. The screen-reader reference now lists them as things to verify.
+- **`live-region-controller` gained transcript and repeat-announcement guidance.** A `role="log"` whose whole list re-renders, or whose newest entry streams in, makes screen readers re-read the entire history (iOS VoiceOver reads the whole conversation). The reference now shows keeping the transcript non-live and announcing each completed turn through a dedicated announcer. Adds a `LIVE-003` finding, a caution that an explicit `aria-atomic="true"` can silence a region in JAWS on Firefox (standards-support issue #876), and corrects a checklist item that previously told reviewers to set `aria-atomic="true"` on status regions.
 
 ## [7.0.3] - 2026-09-23
 
